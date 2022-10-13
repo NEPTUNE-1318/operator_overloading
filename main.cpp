@@ -27,8 +27,20 @@ public:
         return Number(num_ + num);
     }
 
-    void operator+=(int num) {
-        this->num_ + num;
+    Number operator+=(int num) {
+        return this->num_ += num;
+    }
+
+    Number operator-=(int num) {
+        return this->num_ -= num;
+    }
+
+    Number operator*=(int num) {
+        return this->num_ *= num;
+    }
+
+    Number operator/=(int num) {
+        return this->num_ /= num;
     }
 
     void printNum() const { std::cout << num_ << std::endl; }
@@ -36,8 +48,7 @@ public:
 
 int main() {
     Number num1(3);
-    Number num2;
-    num2 += 3;
+    num1 -= 3;
 
-    num2.printNum();
+    num1.printNum();
 }
